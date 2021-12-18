@@ -1,9 +1,8 @@
 pipeline {
-    agent none
     stages {
         stage('Build') {
             agent {
-                none {
+                docker {
                     image 'python:2-alpine'
                 }
             }
@@ -14,7 +13,7 @@ pipeline {
         }
         stage('Test') { 
             agent {
-                none {
+                docker {
                     image 'qnib/pytest' 
                 }
             }
