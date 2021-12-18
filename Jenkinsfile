@@ -14,8 +14,8 @@ pipeline {
         }
         stage('Test') {
             agent {
-                docker {
-                    image 'zmarffy/pybuilder'
+                any {
+                    image 'qnib/pytest'
                 }
             }
             steps {
